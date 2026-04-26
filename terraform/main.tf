@@ -3,8 +3,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "jenkins" {
-  ami           = "ami-0f5ee92e2d63afc18" # Amazon Linux 2 (Mumbai)
+  ami           = "ami-0f5ee92e2d63afc18"
   instance_type = "t2.micro"
+
+  key_name = "jenkins-key"
 
   tags = {
     Name = "jenkins-server"
