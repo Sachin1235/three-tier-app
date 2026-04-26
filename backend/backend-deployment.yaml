@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: backend-app
-        image: 757077150713.dkr.ecr.ap-south-1.amazonaws.com/backend-app:latest
+        image: backend-app
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8085
 
