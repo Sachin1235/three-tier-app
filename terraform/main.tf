@@ -1,7 +1,13 @@
-provider "local" {}
+provider "aws" {
+  region = "ap-south-1"
+}
 
-resource "local_file" "example" {
-  filename = "output.txt"
-  content  = "Terraform pipeline working 🚀"
+resource "aws_instance" "jenkins" {
+  ami           = "ami-0f5ee92e2d63afc18" # Amazon Linux 2 (Mumbai)
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "jenkins-server"
+  }
 }
 
